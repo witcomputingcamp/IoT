@@ -1,0 +1,181 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+        
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    
+
+
+
+  <div class="ui container">
+    
+
+
+  <header class="ui middle aligned center aligned stackable grid segment">
+    <div class="eight wide  column">
+      <h2> Introducing Arduino </h2>
+      <!--<h3> () </h3>-->
+    </div>
+    <div class="one wide column sitemap">
+      <div class="popup" data-content="Top Level Topic View">
+        <a href="../index.html"> <i class="big sitemap icon"></i></a>
+        topics
+      </div>
+    </div>
+    <div class="one wide column">
+      <div class="popup" data-content="All Presentations">
+        <a href="../talkwall.html"> <i class="big film icon"></i></a>
+        slides
+      </div>
+    </div>
+    <div class="one wide column">
+      <div class="popup" data-content="All Labs">
+        <a href="../labwall.html"> <i class="big lab icon"></i></a>
+        labs
+      </div>
+    </div>
+        <div class="four wide column">
+      <img class="ui centered medium image" src="http://www.wit.ie/assets/images/wit_crest.png">
+     </div>
+  <div class="one wide column">
+      <img class="ui centered medium image" src="https://www.southeastmakerspace.org/wp-content/uploads/2014/07/sems_logo_wp_corner.jpg">
+    </div>
+  </header>
+
+<script>
+  $('.popup')
+  .popup()
+;
+</script>
+
+
+<div class="ui four doubling stackable cards">
+
+  
+  
+  <div class="ui card">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Introduction to Arduino </div>
+    </div>
+    <a href="talk-1/introduction_to_arduino.pdf">
+      <img class="ui bordered rounded image" src="talk-1/introduction_to_arduino.png">
+    </a>
+    <div class="content">
+      <div class="description">
+         <p>Over the years Arduino has been the brain of thousands of projects, from everyday objects to complex scientific instruments. A worldwide community of makers, students, hobbyists, artists, programmers, and professionals has gathered around this open-source platform, their contributions have added up to an incredible amount of accessible knowledge that can be of great help to novices and experts alike.</p>
+
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <div class="ui card">
+    <div class="content">
+        <div class="right floated meta"> <i class="lab large icon"></i></div>
+        <div class="header"> Blink </div>
+    </div>
+    <a href="book-a/index.html">
+      <img class="ui bordered rounded image" src="book-a/img/main.png">
+    </a>
+    <div class="content">
+      <div class="description">
+         <p>In this experiment you will get an light emitting diode (LED) to flash repeatedly on and off for a second.</p>
+
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>
+
+
+   </div>
+
+   
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  South East Makerspace. Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>
+
+    <script>
+      
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+  $('.ui.embed').embed();
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+
+
+})
+
+
+    </script>
+
+  </body>
+ </html>
