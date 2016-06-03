@@ -55,87 +55,133 @@ figcaption
   <div class="ui container">
     
 
+<style>
+  
 
-  <header class="ui middle aligned center aligned stackable grid segment">
-    <a class="ui blue left corner label">
-      <i class="sitemap big  icon"></i>
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Introduction to  Arduino
     </a>
-    <div class="eight wide center aligned column">
-      <h2 class="headder">    Internet of Things Workshop </h2>
-    </div>
-    <div class="one wide column sitemap">
-      <div class="popup" data-content="Top Level Topic View">
-        <a href="index.html"> <i class="big sitemap icon"></i>  topics </a>
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Presentations">
-        <a href="talkwall.html"> <i class="big film icon"></i>  slides </a>
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Labs">
-        <a href="labwall.html"> <i class="big lab icon"></i> labs </a>
-      </div>
-    </div>
-      <div class="four wide column">
-      <img class="ui centered medium image" src="http://www.wit.ie/assets/images/wit_crest.png">
-     </div>
-  <div class="one wide column">
-      <img class="ui centered medium image" src="https://www.southeastmakerspace.org/wp-content/uploads/2014/07/sems_logo_wp_corner.jpg">
-    </div>
   </header>
-
-<script>
-  $('.popup')
-  .popup()
-;
-</script>
-
-
-
-<div class="ui four doubling stackable cards">
-
-  
-  
-  <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="sitemap large icon"></i></div>
-        <div class="header"> Introduction to  Arduino </div>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Melody">
+        Melody
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
     </div>
-    <a href="./topic01/index.html">
-      <img class="ui bordered rounded image" src="./topic01/talk-1/introduction_to_arduino.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>This workshop offers an introduction to the Arduino prototyping platform, useful for artists, hobbiests and the wider maker community. Each participant receives a pack containing an Arduino Uno and components to perform each of 5 simple experiments. No prior coding experience is needed as all code will be provided. </p>
-
-      </div>
-    </div>
-  </div>
-
-  
-  
-  <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="sitemap large icon"></i></div>
-        <div class="header"> Physical  Computing With Scratch </div>
-    </div>
-    <a href="./topic02/index.html">
-      <img class="ui bordered rounded image" src="./topic02/talk-1/intro.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>This workshop offers an introduction to physical computing with a Rasperry Pi using the Scratch programming language. </p>
-
-      </div>
-    </div>
-  </div>
-
-  
-
 </div>
 
+<br><br>
+
+  
+  <div  class="ui tab segment lab" data-tab="Melody">
+    <h1>Experiment3 - Melody</h1>
+<p>In this experiment you will use a piezo buzzer to play a simple melody!</p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Circuit</h1>
+<p>Wire up the experiment as shown in fig. 1</p>
+<p><img src="./img/01.png" alt="fig. 1" title="fig. 1"></p>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>The Code</h1>
+<p>In the Arduino IDE, create a new sketch and enter the following code:</p>
+<pre><code class="lang-c">
+/*
+   Melody - Plays a melody
+   This example code is in the public domain.
+   */
+#include &quot;pitches.h&quot;
+
+int melody[] = { // notes in the melody:
+  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+};
+
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = {
+  4, 8, 8, 4, 4, 4, 4, 4
+};
+
+void setup() {
+  // iterate over the notes of the melody:
+  for (int thisNote = 0; thisNote &lt; 8; thisNote++) {
+    // to calculate the note duration, take one second
+    // divided by the note type.
+    //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+    int noteDuration = 1000 / noteDurations[thisNote];
+    tone(8, melody[thisNote], noteDuration);
+    // to distinguish the notes, set a minimum time between them.
+    // the note&#39;s duration + 30% seems to work well:
+    int pauseBetweenNotes = noteDuration * 1.30;
+    delay(pauseBetweenNotes);
+    noTone(8);
+  }
+}
+
+void loop() {
+    // no need to repeat the melody.
+}</code></pre>
+
+  </div>
+ 
+
+
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
 
    </div>
 
