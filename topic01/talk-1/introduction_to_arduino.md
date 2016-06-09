@@ -1,3 +1,3 @@
 Introduction to Arduino
 
-Over the years Arduino has been the brain of thousands of projects, from everyday objects to complex scientific instruments.
+Please download this [zip archive](./talk-1/files/IoTlabs-master.zip)  and extract it onto you desktop. This archive contains all the material you need for today's session.  Ask an instuctor for help if you need help...
