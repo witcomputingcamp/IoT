@@ -113,8 +113,8 @@ body
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Experiment1-Blink">
-      Experiment1-Blink
+    <a class="item" data-tab="Experiment2-Button">
+      Experiment2-Button
     </a>
     
     <a class="item" data-tab="02">
@@ -131,13 +131,13 @@ body
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
     
       
-        <a class="active item" href="../../topic01/book-a/index.html">
+        <a class="item" href="../../topic01/book-a/index.html">
           Experiment1-Blink
         </a>
       
     
       
-        <a class="item" href="../../topic01/book-b/index.html">
+        <a class="active item" href="../../topic01/book-b/index.html">
           Experiment2-Button
         </a>
       
@@ -165,45 +165,28 @@ body
     <div class="ui basic segment">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Experiment1-Blink">
-        <h1>Experiment 1 - Blink</h1>
-<p>In this experiment you will get an light emitting diode (LED) to flash repeatedly on and off for a second.</p>
+      <div  class="ui tab segment lab" data-tab="Experiment2-Button">
+        <h1>Experiment 2 - Button</h1>
+<p>In this experiment you will connect a button and get the LED to light up when it&#39;s pressed.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h1>Setup</h1>
-<h2>Hook up your Arduino</h2>
-<p>Take out your arduino board and USB cable and connect the arduino to your workstation as shown in the below diagram: 
-<img src="img/01.jpg" alt=""></p>
-<h2>Open the Arduino IDE</h2>
-<p>Go to Start -&gt; Programs and click on Arduino IDE. You should see something similar to the following: 
-<img src="img/01.png" alt=""></p>
-<h2>Build Circuit</h2>
-<p>We wire up the experiment as shown in figure 2.
-<img src="img/02.png" alt="fig. 2"></p>
-<h2>Write the code</h2>
-<p>Create a new sketch in Arduino IDE:</p>
-<p>Enter the following code and upload it to the board:</p>
-<pre><code>// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin 13 as an output.
-  pinMode(13, OUTPUT);
+        <h1>Circuit</h1>
+<p>Wire up the experiment as shown in fig.1.
+<img src="./img/01.png" alt="fig.1"></p>
+<h1>Code</h1>
+<p>In the Arduino IDE, create a new sketch and enter the following code:</p>
+<pre><code>int led = 13;
+
+void setup() {                
+  pinMode(led, OUTPUT);     
 }
 
-// the loop function runs over and over again forever
+
 void loop() {
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);              // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);              // wait for a second
+  digitalWrite(led, HIGH);  
 }</code></pre>
-<h2>Challenge (If you have the time...)</h2>
-<p>Try the following challenges:</p>
-<ul>
-<li>Change the program to make the LED blink faster (e.g. every 0.5 seconds).</li>
-<li>Make two LEDs blink simulaniously (hint: get another LED and connect the anode in series with a 220-ohm resistor to pin 12. Connect cathodes connect to ground. Then update the program to blink the LED.</li>
-</ul>
 
       </div>
      

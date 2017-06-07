@@ -113,8 +113,8 @@ body
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Experiment1-Blink">
-      Experiment1-Blink
+    <a class="item" data-tab="Experiment3-Melody">
+      Experiment3-Melody
     </a>
     
     <a class="item" data-tab="02">
@@ -131,7 +131,7 @@ body
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
     
       
-        <a class="active item" href="../../topic01/book-a/index.html">
+        <a class="item" href="../../topic01/book-a/index.html">
           Experiment1-Blink
         </a>
       
@@ -143,7 +143,7 @@ body
       
     
       
-        <a class="item" href="../../topic01/book-c/index.html">
+        <a class="active item" href="../../topic01/book-c/index.html">
           Experiment3-Melody
         </a>
       
@@ -165,45 +165,53 @@ body
     <div class="ui basic segment">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Experiment1-Blink">
-        <h1>Experiment 1 - Blink</h1>
-<p>In this experiment you will get an light emitting diode (LED) to flash repeatedly on and off for a second.</p>
+      <div  class="ui tab segment lab" data-tab="Experiment3-Melody">
+        <h1>Experiment3 - Melody</h1>
+<p>In this experiment you will use a piezo buzzer to play a simple melody!</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h1>Setup</h1>
-<h2>Hook up your Arduino</h2>
-<p>Take out your arduino board and USB cable and connect the arduino to your workstation as shown in the below diagram: 
-<img src="img/01.jpg" alt=""></p>
-<h2>Open the Arduino IDE</h2>
-<p>Go to Start -&gt; Programs and click on Arduino IDE. You should see something similar to the following: 
-<img src="img/01.png" alt=""></p>
-<h2>Build Circuit</h2>
-<p>We wire up the experiment as shown in figure 2.
-<img src="img/02.png" alt="fig. 2"></p>
-<h2>Write the code</h2>
-<p>Create a new sketch in Arduino IDE:</p>
-<p>Enter the following code and upload it to the board:</p>
-<pre><code>// the setup function runs once when you press reset or power the board
+        <h1>Circuit</h1>
+<p>Wire up the experiment as shown in fig. 1</p>
+<p><img src="./img/01.png" alt="fig.1"></p>
+<h1>The Code</h1>
+<p>In the Arduino IDE, create a new sketch and enter the following code:</p>
+<pre><code>/*
+   Melody - Plays a melody
+   This example code is in the public domain.
+   */
+#include &quot;pitches.h&quot;
+
+int melody[] = { // notes in the melody:
+  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+};
+
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = {
+  4, 8, 8, 4, 4, 4, 4, 4
+};
+
 void setup() {
-  // initialize digital pin 13 as an output.
-  pinMode(13, OUTPUT);
+  // iterate over the notes of the melody:
+  for (int thisNote = 0; thisNote &lt; 8; thisNote++) {
+    // to calculate the note duration, take one second
+    // divided by the note type.
+    //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+    int noteDuration = 1000 / noteDurations[thisNote];
+    tone(8, melody[thisNote], noteDuration);
+    // to distinguish the notes, set a minimum time between them.
+    // the note&#39;s duration + 30% seems to work well:
+    int pauseBetweenNotes = noteDuration * 1.30;
+    delay(pauseBetweenNotes);
+    noTone(8);
+  }
 }
 
-// the loop function runs over and over again forever
 void loop() {
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);              // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);              // wait for a second
+    // no need to repeat the melody.
 }</code></pre>
-<h2>Challenge (If you have the time...)</h2>
-<p>Try the following challenges:</p>
-<ul>
-<li>Change the program to make the LED blink faster (e.g. every 0.5 seconds).</li>
-<li>Make two LEDs blink simulaniously (hint: get another LED and connect the anode in series with a 220-ohm resistor to pin 12. Connect cathodes connect to ground. Then update the program to blink the LED.</li>
-</ul>
+<p>You can download the code from <a href="./Sketches/exp3_generating_music.zip">here</a> if you wish. As soon as the Arduino boots it should play a series of musical notes and then stop. For more information see the online reference page for the functions used in this experiment here: <a href="https://www.arduino.cc/en/Reference/Tone">https://www.arduino.cc/en/Reference/Tone</a></p>
 
       </div>
      
