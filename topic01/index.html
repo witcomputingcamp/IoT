@@ -2,23 +2,27 @@
  <html>
    <head>
 
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     
 
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
-      <style>
-        
+     
+
+     <style>
+       
 
 body 
 {
@@ -36,218 +40,282 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
-    </style>
+     </style>
 
-  </head>
+   </head>
 
   <body>
-
     
 
 
 
-  <div class="ui container">
-    
+
+
 
 
   <header class="ui middle aligned center aligned stackable grid segment">
-    <div class="eight wide  column">
-      <h2> Introduction to  Arduino </h2>
-      <!--<h3> () </h3>-->
-    </div>
-    <div class="one wide column sitemap">
-      <div class="popup" data-content="Top Level Topic View">
-        <a href="../index.html"> <i class="big sitemap icon"></i></a>
-        topics
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Presentations">
-        <a href="../talkwall.html"> <i class="big film icon"></i></a>
-        slides
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Labs">
-        <a href="../labwall.html"> <i class="big lab icon"></i></a>
-        labs
-      </div>
-    </div>
-        <div class="four wide column">
-      <img class="ui centered medium image" src="http://www.wit.ie/assets/images/wit_crest.png">
-     </div>
-  <div class="one wide column">
-      <img class="ui centered medium image" src="https://www.southeastmakerspace.org/wp-content/uploads/2014/07/sems_logo_wp_corner.jpg">
-    </div>
-  </header>
 
-<script>
-  $('.popup')
-  .popup()
-;
-</script>
+    <a class="ui blue left corner label">
+  <div id="showTOC" class="popup" data-content="Reveal TOC">
+    <i id="toc" class="sitemap big  icon"></i>
+  </div>
+</a>
 
-
-<div class="ui four doubling stackable cards">
-
-  
-  
-  <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Introduction to Arduino </div>
+    <div class="seven wide center aligned column">
+      <h2> Introduction to Arduino </h2>
+      <p> Single Topic </p>
     </div>
-    <a href="talk-1/introduction_to_arduino.pdf">
-      <img class="ui bordered rounded image" src="talk-1/introduction_to_arduino.png">
+
+    
+<div class="two wide column sitemap">
+  <div class="popup" data-content="To the top level Topics for this Module...">
+    <a href="../index.html"> <i class="huge home icon"></i> Module </a>
+  </div>
+</div>
+
+    
+<div class="four wide column">
+  <div class="ui center aligned mini message segment">
+    southeastmakerspace.org & Frank Walsh (fxwalsh@wit.ie).
+    <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank">Creative Commons License
     </a>
-    <div class="content">
-      <div class="description">
-         <p>Please download this <a href="./talk-1/files/IoTlabs-master.zip">zip archive</a>  and extract it onto you desktop. This archive contains all the material you need for today&#39;s session.  Ask an instuctor for help if you need help...</p>
+  </div>
+</div>
 
+    
+<div class="ui two wide right aligned column">
+  <div class="ui left aligned middle aligned very basic grid">
+    <div class="row">
+      <div class="popup" data-content="All Slides in Course">
+        <a href="../talkwall.html"> <i class="large film icon"></i> All Slides </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="popup" data-content="All Labs in Course">
+        <a href="../labwall.html"> <i class="large lab icon"></i> All Labs </a>
       </div>
     </div>
   </div>
+</div>
 
+
+  </header>
+
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <div class="header">
+      <a class="item" href="#">
+        Introduction to Arduino
+      </a>
+    </div>
+    <div class="menu">
+      
+      <a class="item" href="talk-1/introduction_to_arduino.pdf">
+        Introduction to Arduino
+      </a>
+      
+      <a class="item" href="book-a/index.html">
+        Experiment1-Blink
+      </a>
+      
+      <a class="item" href="book-b/index.html">
+        Experiment2-Button
+      </a>
+      
+      <a class="item" href="book-c/index.html">
+        Experiment3-Melody
+      </a>
+      
+      <a class="item" href="book-d/index.html">
+        Experiment4-Thermistor
+      </a>
+      
+      <a class="item" href="book-e/index.html">
+        Experiment5-PhotoresistorControllingLED
+      </a>
+      
+    </div>
+  </div>
+
+  <div class="pusher">
+    <div class="ui container">
+      <div class="ui basic segment">
+        <div class="ui four doubling stackable cards">
+          
+          
   
+  <a class="ui raised link card" href="talk-1/introduction_to_arduino.pdf" target="_blank">
   
-  <div class="ui card">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Introduction to Arduino </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="talk-1/introduction_to_arduino.png">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>This document guides contains some more details about the experiments we are conducting today.</p>
+
+      </div>
+    </div>
+    
+  </a>
+
+          
+          
+  
+  <a class="ui raised link card" href="book-a/index.html">
+  
     <div class="content">
         <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Experiment 1:Blink </div>
+        <div class="header"> Experiment1-Blink </div>
     </div>
-    <a href="book-a/index.html">
+    <div class="image">
       <img class="ui bordered rounded image" src="book-a/img/main.png">
-    </a>
+    </div>
     <div class="content">
       <div class="description">
          <p>In this experiment you will get an light emitting diode (LED) to flash repeatedly on and off for a second.</p>
 
       </div>
     </div>
-  </div>
+    
+  </a>
 
+          
+          
   
+  <a class="ui raised link card" href="book-b/index.html">
   
-  <div class="ui card">
     <div class="content">
         <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Experiment 2:Button </div>
+        <div class="header"> Experiment2-Button </div>
     </div>
-    <a href="book-b/index.html">
+    <div class="image">
       <img class="ui bordered rounded image" src="book-b/img/main.jpg">
-    </a>
+    </div>
     <div class="content">
       <div class="description">
          <p>In this experiment you will connect a button and get the LED to light up when it&#39;s pressed.</p>
 
       </div>
     </div>
-  </div>
+    
+  </a>
 
+          
+          
   
+  <a class="ui raised link card" href="book-c/index.html">
   
-  <div class="ui card">
     <div class="content">
         <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Experiment 3:Melody </div>
+        <div class="header"> Experiment3-Melody </div>
     </div>
-    <a href="book-c/index.html">
+    <div class="image">
       <img class="ui bordered rounded image" src="book-c/img/main.jpg">
-    </a>
+    </div>
     <div class="content">
       <div class="description">
          <p>In this experiment you will use a piezo buzzer to play a simple melody!</p>
 
       </div>
     </div>
-  </div>
+    
+  </a>
 
+          
+          
   
+  <a class="ui raised link card" href="book-d/index.html">
   
-  <div class="ui card">
     <div class="content">
         <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Experiment 4:Thermistor </div>
+        <div class="header"> Experiment4-Thermistor </div>
     </div>
-    <a href="book-d/index.html">
+    <div class="image">
       <img class="ui bordered rounded image" src="book-d/img/main.jpg">
-    </a>
+    </div>
     <div class="content">
       <div class="description">
          <p>In this experiment you will use a thermistor. A thermistor is an electrical resistor whose resistance is greatly reduced by heating.</p>
 
       </div>
     </div>
-  </div>
+    
+  </a>
 
+          
+          
   
+  <a class="ui raised link card" href="book-e/index.html">
   
-  <div class="ui card">
     <div class="content">
         <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Experiment 5:Clap4LED </div>
+        <div class="header"> Experiment5-PhotoresistorControllingLED </div>
     </div>
-    <a href="book-e/index.html">
-      <img class="ui bordered rounded image" src="book-e/img/main.png">
-    </a>
+    <div class="image">
+      <img class="ui bordered rounded image" src="book-e/img/main.jpg">
+    </div>
     <div class="content">
       <div class="description">
-         <p>In this experiment you will use and LED and microphone to detect a clap or loud noise.</p>
+         <p>This experiment uses a <strong>photo resistor</strong> to switch something on and off based on the light intensity. In this case, it will swith on an LED when it&#39;s dark(ish).</p>
 
       </div>
     </div>
+    
+  </a>
+
+          
+
+        </div>
+      </div>
+    </div>
   </div>
-
-  
-
 </div>
 
 
-   </div>
+    <footer>
 
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  South East Makerspace/WIT. Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
-    </div>
-  </div>
-
+    </footer>
     <script>
-      
-$(document).ready(function()
-{
-  $("img").addClass ("ui image");
+      $(document).ready(function () {
+  $('img').addClass('ui image');
   $('.ui.embed').embed();
 
-  var images = $(".lab img");
-  jQuery.each(images, function(i)  {
-    if((images[i].alt).length > 0)
-    {
-      var div_img = $(document.createElement("div")).addClass("ui segment");
-      $(images[i]).wrap(div_img);
-      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
-      div_label.append(images[i].alt);
-      $(div_label).insertBefore(images[i]);
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
     }
   });
 
+  $('.ui.embed').embed();
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>

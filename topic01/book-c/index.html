@@ -2,23 +2,27 @@
  <html>
    <head>
 
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     
 
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
-      <style>
-        
+     
+
+     <style>
+       
 
 body 
 {
@@ -36,23 +40,13 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
-    </style>
+     </style>
 
-  </head>
+   </head>
 
   <body>
-
-    
-
-
-
-  <div class="ui container">
     
 
 <style>
@@ -74,17 +68,36 @@ h1
 {
   font-style:italic;
   font-size:130%;
-  border-bottom: thin solid black;
+  border-bottom:thin solid black;
 }
+
 h2
 {
   font-size:110%;
   border-bottom: thin solid black;
 }
+
 h3
 {
   font-size:100%;
   border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
 }
 
 
@@ -93,49 +106,78 @@ h3
 
 <div class="ui fixed top pointing inverted menu labmenu">
   <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      <i class="sitemap icon"></i>
-      Introduction to  Arduino
+      Introduction to Arduino
     </a>
   </header>
   <div class="right tab-menu menu">
     
-      <a class="item" data-tab="Experiment 3:Melody">
-        Experiment 3:Melody
-      </a>
+    <a class="item" data-tab="Experiment3-Melody">
+      Experiment3-Melody
+    </a>
     
-      <a class="item" data-tab="01">
-        01
-      </a>
+    <a class="item" data-tab="02">
+      02
+    </a>
     
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-    </div>
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
 </div>
 
-<br><br>
-
-  
-  <div  class="ui tab segment lab" data-tab="Experiment 3:Melody">
-    <h1>Experiment3 - Melody</h1>
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book-a/index.html">
+          Experiment1-Blink
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-b/index.html">
+          Experiment2-Button
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic01/book-c/index.html">
+          Experiment3-Melody
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-d/index.html">
+          Experiment4-Thermistor
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-e/index.html">
+          Experiment5-PhotoresistorControllingLED
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Experiment3-Melody">
+        <h1>Experiment3 - Melody</h1>
 <p>In this experiment you will use a piezo buzzer to play a simple melody!</p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="01">
-    <h1>Circuit</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Circuit</h1>
 <p>Wire up the experiment as shown in fig. 1</p>
-<p><img src="./img/01.png" alt="fig. 1" title="fig. 1"></p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="02">
-    <h1>The Code</h1>
+<p><img src="./img/01.png" alt="fig.1"></p>
+<h1>The Code</h1>
 <p>In the Arduino IDE, create a new sketch and enter the following code:</p>
-<pre><code class="lang-c">
-/*
+<pre><code>/*
    Melody - Plays a melody
    This example code is in the public domain.
    */
@@ -169,61 +211,83 @@ void setup() {
 void loop() {
     // no need to repeat the melody.
 }</code></pre>
-<p>You can download the code from <a href="./Sketches/exp3_generating_music.zip">here</a> .
-As soon as the Arduino boots it should play a series of musical notes and then stop. For more information see the online reference page for the functions used in this experiment here: <a href="https://www.arduino.cc/en/Reference/Tone">https://www.arduino.cc/en/Reference/Tone</a></p>
+<p>You can download the code from <a href="./Sketches/exp3_generating_music.zip">here</a> if you wish. As soon as the Arduino boots it should play a series of musical notes and then stop. For more information see the online reference page for the functions used in this experiment here: <a href="https://www.arduino.cc/en/Reference/Tone">https://www.arduino.cc/en/Reference/Tone</a></p>
 
+      </div>
+     
+    </div>
   </div>
- 
-
-
-<script>
-$('.ui.menu .item')
-  .tab({
-    history: true,
-    historyType: 'hash'
-  })
-;
-</script>
-
-   </div>
-
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  South East Makerspace/WIT. Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        southeastmakerspace.org & Frank Walsh (fxwalsh@wit.ie).
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
     </div>
   </div>
 
+<script>
+  $(document).on('keydown', function (e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+    <footer>
+
+    </footer>
     <script>
-      
-$(document).ready(function()
-{
-  $("img").addClass ("ui image");
+      $(document).ready(function () {
+  $('img').addClass('ui image');
   $('.ui.embed').embed();
 
-  var images = $(".lab img");
-  jQuery.each(images, function(i)  {
-    if((images[i].alt).length > 0)
-    {
-      var div_img = $(document.createElement("div")).addClass("ui segment");
-      $(images[i]).wrap(div_img);
-      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
-      div_label.append(images[i].alt);
-      $(div_label).insertBefore(images[i]);
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
     }
   });
 
+  $('.ui.embed').embed();
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>
