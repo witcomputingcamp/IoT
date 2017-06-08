@@ -113,8 +113,8 @@ body
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Experiment2-Button">
-      Experiment2-Button
+    <a class="item" data-tab="Experiment6-PhotoLED">
+      Experiment6-PhotoLED
     </a>
     
     <a class="item" data-tab="02">
@@ -137,7 +137,7 @@ body
       
     
       
-        <a class="active item" href="../../topic01/book-b/index.html">
+        <a class="item" href="../../topic01/book-b/index.html">
           Experiment2-Button
         </a>
       
@@ -161,7 +161,7 @@ body
       
     
       
-        <a class="item" href="../../topic01/book-f/index.html">
+        <a class="active item" href="../../topic01/book-f/index.html">
           Experiment6-PhotoLED
         </a>
       
@@ -171,27 +171,39 @@ body
     <div class="ui basic segment">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Experiment2-Button">
-        <h1>Experiment 2 - Button</h1>
-<p>In this experiment you will connect a button and get the LED to light up when it&#39;s pressed.</p>
+      <div  class="ui tab segment lab" data-tab="Experiment6-PhotoLED">
+        <h1>Experiment 5 - Photoresistor Controlling a LED</h1>
+<p>This experiment uses a <strong>photo resistor</strong> to switch something on and off based on the light intensity. In this case, it will swith on an LED when it&#39;s dark(ish).</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
         <h1>Circuit</h1>
-<p>Wire up the experiment as shown in fig.1.
-<img src="https://raw.githubusercontent.com/truhlikfredy/IoTlabs/master/2%20-%20button/Images/button.png" alt="fig.1"></p>
-<h1>Code</h1>
+<p>Wire up the experiment as shown in fig. 1</p>
+<p><img src="./img/01.png" alt="fig.1"></p>
+<h1>The Code</h1>
 <p>In the Arduino IDE, create a new sketch and enter the following code:</p>
-<pre><code>int led = 13;
+<pre><code>//constants
+const int pResistorPin = A0; // Photoresistor at Arduino analog pin A0
+const int ledPin = 9;       // Led pin at Arduino pin 9
+const int threshold = 25;  //You can change threshold value to change the sensitivity.
 
-void setup() {                
-  pinMode(led, OUTPUT);     
+//Variables
+int value;          // Store value from photoresistor (0-1023)
+
+void setup(){
+ pinMode(ledPin, OUTPUT);  // Set ledPin - 9 pin as an output
+ pinMode(pResistorPin, INPUT);// Set pResistor - A0 pin as an input (optional)
 }
 
-
-void loop() {
-  digitalWrite(led, HIGH);  
+void loop(){
+  value = analogRead(pResistorPin);
+  if (value &gt; threshold){
+    digitalWrite(ledPin, LOW); 
+  }
+  else{
+    digitalWrite(ledPin, HIGH);
+  }
 }</code></pre>
 
       </div>

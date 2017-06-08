@@ -113,8 +113,8 @@ body
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Experiment5-PhotoresistorLED">
-      Experiment5-PhotoresistorLED
+    <a class="item" data-tab="Experiment5-Clap4LED">
+      Experiment5-Clap4LED
     </a>
     
     <a class="item" data-tab="02">
@@ -156,7 +156,13 @@ body
     
       
         <a class="active item" href="../../topic01/book-e/index.html">
-          Experiment5-PhotoresistorLED
+          Experiment5-Clap4LED
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-f/index.html">
+          Experiment6-PhotoLED
         </a>
       
     
@@ -165,9 +171,9 @@ body
     <div class="ui basic segment">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Experiment5-PhotoresistorLED">
-        <h1>Experiment 5 - Photoresistor Controlling a LED</h1>
-<p>This experiment uses a <strong>photo resistor</strong> to switch something on and off based on the light intensity. In this case, it will swith on an LED when it&#39;s dark(ish).</p>
+      <div  class="ui tab segment lab" data-tab="Experiment5-Clap4LED">
+        <h1>Experiment 5 - Clap4LED</h1>
+<p>This experiment uses a <strong>Microphone</strong> to detect a clap or loud noise and switch an LED on.</p>
 
       </div>
      
@@ -175,28 +181,106 @@ body
         <h1>Circuit</h1>
 <p>Wire up the experiment as shown in fig. 1</p>
 <p><img src="./img/01.png" alt="fig.1"></p>
-<h1>The Code</h1>
+<p>The microphone module is polarised, which means it has a positive and negative terminal which must be correctly placed in the circuit in order to function as expected. Please examine fig: 2 to correctly identify which leg is positive and which is negative.</p>
+<p><img src="./img/02.png" alt="fig.1"></p>
+<h2>The Code</h2>
 <p>In the Arduino IDE, create a new sketch and enter the following code:</p>
-<pre><code>//constants
-const int pResistorPin = A0; // Photoresistor at Arduino analog pin A0
-const int ledPin = 9;       // Led pin at Arduino pin 9
-const int threshold = 25;  //You can change threshold value to change the sensitivity.
+<pre><code>//global variables
+int readValue;
+int maximumValue;
+int minimumValue; 
 
-//Variables
-int value;          // Store value from photoresistor (0-1023)
 
-void setup(){
- pinMode(ledPin, OUTPUT);  // Set ledPin - 9 pin as an output
- pinMode(pResistorPin, INPUT);// Set pResistor - A0 pin as an input (optional)
+// will reset maximum and minimum values only when we call it
+void resetMaximumAndMinimum() 
+{
+  maximumValue = 0;             // set maximum to lowest value possible
+  minimumValue = 32767;         // set minimum to highest value possible
 }
 
-void loop(){
-  value = analogRead(pResistorPin);
-  if (value &gt; threshold){
-    digitalWrite(ledPin, LOW); 
+
+// this runs only once on the startup
+void setup() 
+{
+  // initialize built-in LED light at digital pin 13 as an output
+  pinMode(13, OUTPUT);           
+  resetMaximumAndMinimum();
+}
+
+
+// the loop runs over and over again forever
+void loop() 
+{
+  // read current value from the microphone
+  readValue = analogRead(A0);     
+
+  // if read value is smaller than minimum then set it as the new minimum
+  if (readValue &lt; minimumValue)   
+  {
+    minimumValue = readValue;     
   }
-  else{
-    digitalWrite(ledPin, HIGH);
+
+  // if read value is bigger than maximum then set it as the new maximum
+  if (readValue &gt; maximumValue)   
+  {
+    maximumValue = readValue;     
+  }
+
+  // Change the 10 constant to adjust the sensitivity.
+  //   To 20 if you want the light triggered on louder claps   
+  //   Ti 5  if you want the light triggered on quieter noises 
+  //   Feel free to experiment with the values.
+  if ( (maximumValue - minimumValue) &gt; 10 ) 
+  {
+    digitalWrite(13, HIGH);       // turn the LED on (HIGH is the voltage level)
+    delay(2 * 1000);              // wait for 2 seconds (2 * 1000ms)
+    digitalWrite(13, LOW );       // turn the LED off by making the voltage LOW
+
+    // if we wouldn&#39;t clear the max &amp; min then after first trigger it would get 
+    // triggered every single time no matter what read values were
+    resetMaximumAndMinimum();     
+  }
+}</code></pre>
+<h2>The Code 2</h2>
+<p>There&#39;s usually more than one way to write a program.This sketch does the same thing as the provious one...</p>
+<pre><code>//global constants
+#define noiseThreshold  10           // increasing it will make trigger less sensitive
+#define microphonePin   A0           // analog  pin A0 is connected to microphone
+#define ledPin          13           // digital pin 13 is connected to LED
+#define ledTime          3           // LED will be lit for 3 seconds
+
+
+// this runs only once on the startup
+void setup() {
+  // initialize desired ledPin as output
+  pinMode(ledPin, OUTPUT);           
+}
+
+
+// the loop runs over and over again forever
+void loop() {
+  static unsigned int maximumValue =     0;
+  static unsigned int minimumValue = 65535; 
+
+  // read current value from the microphone
+  unsigned int readValue = analogRead(microphonePin);  
+
+  // if read value is bigger/smaller than our current max/min then update our max/min
+  if (readValue &lt; minimumValue) { 
+    minimumValue = readValue;     
+  }
+  if (readValue &gt; maximumValue) { 
+    maximumValue = readValue;     
+  }
+
+  // if the noise was too loud lit the light
+  if ( (maximumValue - minimumValue) &gt; noiseThreshold ) {
+    digitalWrite(ledPin, HIGH);      // turn the LED on (HIGH is the voltage level)
+    delay(ledTime * 1000);           // wait for predefined time
+    digitalWrite(ledPin, LOW );      // turn the LED off by making the voltage LOW
+
+    maximumValue =     0;            // set maximum to lowest value possible
+    minimumValue = 65535;            // set minimum to highest value possible
   }
 }</code></pre>
 
