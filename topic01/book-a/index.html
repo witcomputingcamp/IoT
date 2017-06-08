@@ -156,7 +156,7 @@ body
     
       
         <a class="item" href="../../topic01/book-e/index.html">
-          Experiment5-PhotoresistorControllingLED
+          Experiment5-PhotoresistorLED
         </a>
       
     
@@ -176,12 +176,31 @@ body
 <h2>Hook up your Arduino</h2>
 <p>Take out your arduino board and USB cable and connect the arduino to your workstation as shown in the below diagram: 
 <img src="img/01.jpg" alt=""></p>
-<h2>Open the Arduino IDE</h2>
-<p>Go to Start -&gt; Programs and click on Arduino IDE. You should see something similar to the following: 
-<img src="img/01.png" alt=""></p>
+<h2>The Arduino App</h2>
+<h3>Opening the Arduino App</h3>
+<p>In the bottom left corner of the screen, click on the search icon to open the search window. Type &quot;Arduino&quot; and you should see the Arduino app in the search results. Click on the Arduino app to start it.</p>
+<blockquote>
+<p><img src="img/03.png" alt="Starting Arduino IDE"></p>
+</blockquote>
+<p>All going well, you should see something similar to the following: </p>
+<blockquote>
+<p><img src="img/01.png" alt="Arduino IDE"></p>
+</blockquote>
+<h3>Connecting the board</h3>
+<p>You will use the Arduino App to write programs that will run on the Arduino Board. To connect your board to the app:</p>
+<ul>
+<li><p>In the Arduino App, select <em>Tools-&gt;Board</em> and select &quot;Arduino/Genuino Uno&quot;
+<img src="img/04.png" alt="Board selection"></p>
+</li>
+<li><p>Select <em>Tools-&gt;Port</em> and select the port that says &quot;Arduino/Genuino Uno&quot;. 
+<img src="img/05.png" alt="Port selection"></p>
+</li>
+</ul>
 <h2>Build Circuit</h2>
-<p>We wire up the experiment as shown in figure 2.
-<img src="img/02.png" alt="fig. 2"></p>
+<p>We wire up the experiment as shown in figure 2.</p>
+<blockquote>
+<p><img src="img/02.png" alt="fig. 2"></p>
+</blockquote>
 <h2>Write the code</h2>
 <p>Create a new sketch in Arduino IDE:</p>
 <p>Enter the following code and upload it to the board:</p>
@@ -198,6 +217,12 @@ void loop() {
   digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);              // wait for a second
 }</code></pre>
+<h2>Upload the code</h2>
+<p>Click on the <em>Upload</em> button in the top left corner of the Arduino IDE. After a short time, you should see your LED start to blink. </p>
+<blockquote>
+<p><img src="img/06.png" alt="Upload Button"></p>
+</blockquote>
+<p>Congratulations! You&#39;ve created your first Arduino program.</p>
 <h2>Challenge (If you have the time...)</h2>
 <p>Try the following challenges:</p>
 <ul>
