@@ -2,23 +2,27 @@
  <html>
    <head>
 
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     
 
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
-      <style>
-        
+     
+
+     <style>
+       
 
 body 
 {
@@ -36,23 +40,13 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
-    </style>
+     </style>
 
-  </head>
+   </head>
 
   <body>
-
-    
-
-
-
-  <div class="ui container">
     
 
 <style>
@@ -74,17 +68,36 @@ h1
 {
   font-style:italic;
   font-size:130%;
-  border-bottom: thin solid black;
+  border-bottom:thin solid black;
 }
+
 h2
 {
   font-size:110%;
   border-bottom: thin solid black;
 }
+
 h3
 {
   font-size:100%;
   border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
 }
 
 
@@ -93,65 +106,111 @@ h3
 
 <div class="ui fixed top pointing inverted menu labmenu">
   <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      <i class="sitemap icon"></i>
-      Introduction to  Arduino
+      Introduction to Arduino
     </a>
   </header>
   <div class="right tab-menu menu">
     
-      <a class="item" data-tab="Experiment 1:Blink">
-        Experiment 1:Blink
-      </a>
+    <a class="item" data-tab="Experiment1-Blink">
+      Experiment1-Blink
+    </a>
     
-      <a class="item" data-tab="01">
-        01
-      </a>
+    <a class="item" data-tab="02">
+      02
+    </a>
     
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-    </div>
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
 </div>
 
-<br><br>
-
-  
-  <div  class="ui tab segment lab" data-tab="Experiment 1:Blink">
-    <h1>Experiment 1 - Blink</h1>
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="active item" href="../../topic01/book-a/index.html">
+          Experiment1-Blink
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-b/index.html">
+          Experiment2-Button
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-c/index.html">
+          Experiment3-Melody
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-d/index.html">
+          Experiment4-Thermistor
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-e/index.html">
+          Experiment5-Clap4LED
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-f/index.html">
+          Experiment6-PhotoLED
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Experiment1-Blink">
+        <h1>Experiment 1 - Blink</h1>
 <p>In this experiment you will get an light emitting diode (LED) to flash repeatedly on and off for a second.</p>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="01">
-    <h1>Setup</h1>
-<h2>Hook up your Arduino:</h2>
-<p>Take out your arduino board and USB cable and connect the arduino to your workstation as shown in the below diagram:
-<img src="./img/01.jpg" alt=""></p>
-<h2>Open Arduino IDE</h2>
-<p>Go to Start -&gt; Programs  and click on <strong>Arduino IDE</strong>. You should see something similar to the following:
-<img src="./img/01.png" alt=""></p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="02">
-    <h1>Build Circuit</h1>
-<p>We wire up the experiment as shown in fig: 2. </p>
-<p><img src="img/02.png" alt="fig. 2" title="fig. 2"></p>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="03">
-    <h1>Write the code</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Setup</h1>
+<h2>Hook up your Arduino</h2>
+<p>Take out your arduino board and USB cable and connect the arduino to your workstation as shown in the below diagram: 
+<img src="img/01.jpg" alt=""></p>
+<h2>The Arduino App</h2>
+<h3>Opening the Arduino App</h3>
+<p>In the bottom left corner of the screen, click on the search icon to open the search window. Type &quot;Arduino&quot; and you should see the Arduino app in the search results. Click on the Arduino app to start it.</p>
+<blockquote>
+<p><img src="img/03.png" alt="Starting Arduino IDE"></p>
+</blockquote>
+<p>All going well, you should see something similar to the following: </p>
+<blockquote>
+<p><img src="img/01.png" alt="Arduino IDE"></p>
+</blockquote>
+<h3>Connecting the board</h3>
+<p>You will use the Arduino App to write programs that will run on the Arduino Board. To connect your board to the app:</p>
+<ul>
+<li><p>In the Arduino App, select <em>Tools-&gt;Board</em> and select &quot;Arduino/Genuino Uno&quot;
+<img src="img/04.png" alt="Board selection"></p>
+</li>
+<li><p>Select <em>Tools-&gt;Port</em> and select the port that says &quot;Arduino/Genuino Uno&quot;. 
+<img src="img/05.png" alt="Port selection"></p>
+</li>
+</ul>
+<h2>Build Circuit</h2>
+<p>We wire up the experiment as shown in figure 2.</p>
+<blockquote>
+<p><img src="https://raw.githubusercontent.com/truhlikfredy/IoTlabs/master/1%20-%20blink/Images/blink.png" alt="fig. 2"></p>
+</blockquote>
+<h2>Write the code</h2>
 <p>Create a new sketch in Arduino IDE:</p>
 <p>Enter the following code and upload it to the board:</p>
-<pre><code class="lang-c">
-// the setup function runs once when you press reset or power the board
+<pre><code>// the setup function runs once when you press reset or power the board
 void setup() {
   // initialize digital pin 13 as an output.
   pinMode(13, OUTPUT);
@@ -164,65 +223,94 @@ void loop() {
   digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);              // wait for a second
 }</code></pre>
+<h2>Upload the code</h2>
+<p>Click on the <em>Upload</em> button in the top left corner of the Arduino IDE. After a short time, you should see your LED start to blink. </p>
+<blockquote>
+<p><img src="img/06.png" alt="Upload Button"></p>
+</blockquote>
+<p>Congratulations! You&#39;ve created your first Arduino program.</p>
 <h2>Challenge (If you have the time...)</h2>
 <p>Try the following challenges:</p>
 <ul>
 <li>Change the program to make the LED blink faster (e.g. every 0.5 seconds).</li>
-<li>Make two LEDs blink simulaniously (hint: get another LED and connect the anode   in series with a 220-ohm resistor to pin 12. Connect cathodes connect to ground. Then update the program to blink the LED.</li>
+<li>Make two LEDs blink simulaniously (hint: get another LED and connect the anode in series with a 220-ohm resistor to pin 12. Connect cathodes connect to ground. Then update the program to blink the LED.</li>
 </ul>
 
+      </div>
+     
+    </div>
   </div>
- 
-
-
-<script>
-$('.ui.menu .item')
-  .tab({
-    history: true,
-    historyType: 'hash'
-  })
-;
-</script>
-
-   </div>
-
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  South East Makerspace/WIT. Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        southeastmakerspace.org & Frank Walsh (fxwalsh@wit.ie).
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
     </div>
   </div>
 
+<script>
+  $(document).on('keydown', function (e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+    <footer>
+
+    </footer>
     <script>
-      
-$(document).ready(function()
-{
-  $("img").addClass ("ui image");
+      $(document).ready(function () {
+  $('img').addClass('ui image');
   $('.ui.embed').embed();
 
-  var images = $(".lab img");
-  jQuery.each(images, function(i)  {
-    if((images[i].alt).length > 0)
-    {
-      var div_img = $(document.createElement("div")).addClass("ui segment");
-      $(images[i]).wrap(div_img);
-      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
-      div_label.append(images[i].alt);
-      $(div_label).insertBefore(images[i]);
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
     }
   });
 
+  $('.ui.embed').embed();
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>
